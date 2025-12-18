@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website van Omar - 21 jaar, Software Developer student bij TCR. Ontdek meer over mijn werk en ervaring.">
+    <meta name="keywords" content="Omar, portfolio, software developer, TCR, webdevelopment, programmeren">
+    <meta name="author" content="Omar Saghou">
+    <title>Omar - Portfolio | Home</title>
+    <link rel="stylesheet" href="Stylesheet.css">
+    
+    </head>
+
+<body class="body"> 
+    
+    <button class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="nav-menu" id="navMenu">
+  <ul>
+    <li><a href="Index.html">Home</a></li>
+    <li><a href="OverMij.html">Over Ons</a></li>
+    <li><a href="portofolio.html">Diensten</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li> <a href="Stage-Countdown.html" class="Stage">Count-Down</a></li>
+  </ul>
+</nav>
+
+    <header role="banner">
+        <div class="logoPic">
+            <img class="logo" src="logo.png" alt="Logo Omar Portfolio" height="300" width="300">
+        </div>
+
+        <div class="Knop">
+            <button id="dark-mode-toggle" class="ZwartKnop"><p class="KleurKnop">Schakel Dark Mode</p></button>
+        </div>
+        
+        <nav role="navigation" aria-label="Hoofdnavigatie">
+            <a href="Index.html" class="Option">Home</a>
+            <a href="OverMij.html" class="Option">Over Mij</a>
+            <a href="portofolio.html" class="Option">Portofolio</a>
+            <a href="contact.html" class="Option">Contact</a>
+            <a href="Stage-Countdown.html" class="Stage">Count-Down</a>
+        </nav>  
+    </header>
+
+    <main role="main">
+        <hr />
+        <div class="hoofdfoto">
+            <img class="hoofdfoto1" src="wie-ben-ik.png" alt="Wie ben ik banner" height="500" width="2000"> 
+        </div>
+        <hr />
+
+        <section aria-labelledby="introductie-heading">
+            <h2>Introductie</h2>
+            <ul class="list">
+                <li class="list1"><strong>Naam:</strong> Omar</li>
+                <li class="list1"><strong>Leeftijd:</strong> 21</li>
+                <li class="list1">
+                    <p class="Descript">Je zal meer over me lezen op de volgende geklikte pagina's.</p>
+                </li>
+            </ul>  
+        </section>
+
+        <div class="EndFoto">
+            <img class="Me" src="ik.jpg" alt="Foto van Omar" height="530" width="530">
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p class="Footer-Contact">
+            <button aria-label="Neem contact op met Omar" class="Contact1">Contact Mij!</button>
+        </p>
+        <p class="CopyRight">Gemaakt door Omar Saghou ©</p>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Deze website gebruikt cookies voor functionaliteit en analyse. Door deze te accepteren, gaat u akkoord met het gebruik hiervan.</p>
+        <button id="accept-cookies-btn">Accepteren</button>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        const Body1 = $('body'); 
+        const DarkModeToggle = $('#dark-mode-toggle'); 
+        
+        const PicLogo = $('.logoPic');
+        
+        PicLogo.hide();
+        PicLogo.slideDown(850);
+        Body1.hide();
+        Body1.slideDown(850); 
+        
+        DarkModeToggle.on('click', function () {
+            Body1.toggleClass('dark-mode'); 
+
+            if (Body1.hasClass('dark-mode')) {
+                console.log("Dark Mode Aangezet.");
+                $('.KleurKnop').text('Schakel Light Mode');
+            } else {
+                console.log("Dark Mode Uitgezet.");
+                $('.KleurKnop').text('Schakel Dark Mode');
+            }
+        });
+
+        const cookieBanner = $('#cookie-banner');
+        const acceptButton = $('#accept-cookies-btn');
+
+        acceptButton.on('click', function() {
+
+            cookieBanner.slideUp(300, function() {
+
+                $(this).remove(); 
+            });
+            
+            console.log("Cookie-melding weggeklikt.");
+        });
+
+        $(document).ready(function() {
+  $('.menu-toggle').click(function() {
+    // Wissel de 'open' class voor de animatie van de streepjes
+    $(this).toggleClass('open');
+    
+    // Laat het menu in- of uitfaden (of gebruik .slideToggle() voor een schuifeffect)
+    $('.nav-menu').slideToggle(300);
+  });
+});
+        
+    </script>
+
+</body>
+</html>
