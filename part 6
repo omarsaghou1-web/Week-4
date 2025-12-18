@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<title>Stage-CountDown</title>
+<body> 
+
+    <button class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="nav-menu" id="navMenu">
+  <ul>
+    <li><a href="Index.html">Home</a></li>
+    <li><a href="OverMij.html">Over Ons</a></li>
+    <li><a href="portofolio.html">Diensten</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li> <a href="Stage-Countdown.html" class="Stage">Count-Down</a></li>
+  </ul>
+</nav>
+        <header>
+            
+            <div class="logoPic">
+            <img class="logo" src="logo.png" alt="Logo Omar Portfolio" height="300" width="300">
+        </div>
+<h1 class="Count-Title">Dagen Tot Stage:</h1> 
+
+    <link rel="stylesheet" href="Stylesheet.css">
+
+           <nav role="navigation" aria-label="Hoofdnavigatie">
+            <a href="Index.html" class="Option">Home</a>
+            <a href="OverMij.html" class="Option">Over Mij</a>
+            <a href="portofolio.html" class="Option">Portofolio</a>
+            <a href="contact.html" class="Option">Contact</a>
+            <a href="Stage-Countdown.html" class="Stage">Count-Down</a>
+        </nav>  
+
+<p class="DatumStag">Stage moment datum:</p>
+
+<fieldset>
+    <h2 id="Countdown"></h2>
+</fieldset>
+
+  <footer role="contentinfo">
+        <p class="Footer-Contact">
+            <button class="ContactMijBtn">Contact Mij!</button>
+        </p>
+        <p class="CopyRight">Gemaakt door Omar Saghou ©</p>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <script> 
+      document.getElementById("Countdown").textContent = "Stage Periode nog onbekend!";
+      
+
+      $(document).ready(function() {
+  $('.menu-toggle').click(function() {
+
+    $(this).toggleClass('open');
+    
+    $('.nav-menu').slideToggle(300);
+  });
+});
+    </script>
+</body>
+</html> 
