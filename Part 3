@@ -1,0 +1,125 @@
+<!DOCTYPE html>  
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar - Portfolio | Over Mij</title>
+    <link rel="stylesheet" href="Stylesheet.css">
+</head>
+
+<body class="body">
+    <header>
+        <button class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="nav-menu" id="navMenu">
+  <ul>
+    <li><a href="Index.html">Home</a></li>
+    <li><a href="OverMij.html">Over Ons</a></li>
+    <li><a href="portofolio.htm">Diensten</a></li>
+    <li><a href="Stage-Countdown.html">Contact</a></li>
+  </ul>
+
+</nav>
+        <div class="logoPic">
+            <img class="logo" src="logo.png" height="300px" width="300px" alt="Logo Omar Portfolio">
+        </div>
+
+        <div class="Knop">
+            <button id="dark-mode-toggle" class="ZwartKnop">
+                <p class="KleurKnop">Schakel Dark Mode</p>
+            </button>
+        </div>
+
+           <nav role="navigation" aria-label="Hoofdnavigatie">
+
+            <a href="Index.html" class="Option">Home</a>
+            <a href="OverMij.html" class="Option">Over Mij</a>
+            <a href="portofolio.html" class="Option">Portofolio</a>
+            <a href="contact.html" class="Option">Contact</a>
+            <a href="Stage-Countdown.html" class="Stage">Count-Down</a>
+        </nav>
+    </header>
+
+    <main>
+        <hr />
+        <div class="hoofdfoto">
+            <img class="hoofdfoto1" src="overmij.jpg" alt="Over mij banner"> 
+        </div> 
+        <hr />
+
+        <h2>Over mij:</h2>
+
+        <div class="Werk-ervaring">
+            <ul class="WerkErvaring">
+                <li class="ZZP">ZZP Simpele Bijbanen Nu:</li>
+                <li class="Crea">Crea sviluppo innovativo Stage Sardinie 2023-2024</li>
+                <li class="Yolcu">Yolcu Supermarkt Sliedrecht 2021-2022</li>
+            </ul>
+        </div>
+
+        <div class="Overtuiging">
+            <p class="Over1">Hoi, Ben Omar 21 jaar ik studeer in TCR Software Developer.</p>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p class="Footer-Contact">
+            <button class="ContactMijBtn">Contact Mij!</button>
+        </p>
+        <p class="CopyRight">Gemaakt door Omar Saghou ©</p>
+    </footer>
+    
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Deze website gebruikt cookies voor functionaliteit en analyse.</p>
+        <button id="accept-cookies-btn">Accepteren</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        const PicLogo = $('.logoPic');
+        const Body1 = $('body'); 
+        const DarkModeToggle = $('#dark-mode-toggle'); 
+        const cookieBanner = $('#cookie-banner');
+        const acceptButton = $('#accept-cookies-btn');
+
+        PicLogo.hide();
+        PicLogo.slideDown(850);
+        Body1.hide();
+        Body1.slideDown(850); 
+
+        DarkModeToggle.on('click', function () {
+            Body1.toggleClass('dark-mode'); 
+
+            if (Body1.hasClass('dark-mode')) {
+                conole.log("Dark Mode Aangezet.");
+                $('.KleurKnop').text('Schakel Light Mode');
+            } else {
+                console.log("Dark Mode Uitgezet.");
+                $('.KleurKnop').text('Schakel Dark Mode');
+            }
+        });
+
+        acceptButton.on('click', function() {
+            cookieBanner.slideUp(300, function() {
+                $(this).remove(); 
+            });
+            
+            console.log("Cookie-melding weggeklikt.");
+
+            
+        });
+
+        $(document).ready(function() {
+  $('.menu-toggle').click(function() {
+    $(this).toggleClass('open');
+    
+    $('.nav-menu').slideToggle(300);
+  });
+});
+    </script>
+</body>
+</html>
